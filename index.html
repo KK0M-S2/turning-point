@@ -11,6 +11,8 @@
 <style>
 /* ───────── 글꼴 (index.html과 같은 폴더에 woff2 파일들 필요) ───────── */
 @font-face{font-family:'NEXON Lv2 Gothic';src:url('NEXON_Lv2_Gothic_Medium.woff2') format('woff2');font-weight:400 500;font-display:swap}
+@font-face{font-family:'Mona10';src:url('Mona10.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Mona10';src:url('Mona10-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'Chosun Myeongjo';src:url('ChosunNm.woff2') format('woff2');font-display:swap}
 /* ───────── 편집 화면 ───────── */
 :root{--u-bg:#f2f2f0;--u-card:#fff;--u-ink:#1d1d1b;--u-mute:#6d6b66;--u-line:#dcdad4;--u-acc:#3b5bdb;--u-warn:#b4441f;color-scheme:light}
@@ -173,30 +175,46 @@ details.chap>summary{cursor:pointer;padding:10px 0;font-weight:600}
 .t-film .foot{line-height:2;letter-spacing:.08em}
 .t-film .foot b{display:block;font-family:var(--display);font-weight:400;font-size:18px;color:var(--ink);letter-spacing:.02em}
 
-/* ───────── 테마 3: 윈도우 XP ───────── */
-.t-xp{--bg:#3a78d8;--paper:#ece9d8;--ink:#111;--muted:#555;--line:#b9b5a3;--a:#0a5fd8;--b:#e0711a;--gap:rgba(10,95,216,.12);--display:Tahoma,'Nanum Gothic',sans-serif;--body:Tahoma,'Nanum Gothic',sans-serif;font-size:13px;padding:30px 26px 0;
- background:radial-gradient(ellipse 140% 18% at 30% 100%,#5fae3c 0 55%,transparent 56%),radial-gradient(ellipse 120% 14% at 85% 100%,#4f9a31 0 55%,transparent 56%),linear-gradient(#2a68d2 0%,#6ea6ec 70%,#a9cdf3 100%)}
-.t-xp .sec{background:var(--paper);border:3px solid #0b52d0;border-top:0;border-radius:8px 8px 0 0;box-shadow:2px 3px 0 rgba(0,0,30,.25);overflow:hidden}
-.t-xp .sec-h{height:30px;padding:0 6px 0 10px;color:#fff;font-weight:700;font-size:13px;text-shadow:1px 1px 0 #0a246a;background:linear-gradient(#0a5fd8 0%,#3d8ef5 10%,#0b5ad6 45%,#0846b4 100%)}
-.t-xp .xbtn{display:flex;width:21px;height:21px;border:1px solid #fff;border-radius:3px;background:linear-gradient(#e87452,#c33f17);color:#fff;font-size:15px;line-height:1;align-items:center;justify-content:center;text-shadow:none}
-.t-xp .sec-b{padding:14px 16px}
-.t-xp .ct{font-size:36px;font-weight:700}
-.t-xp .ph{border:2px solid #fff;outline:1px solid #7f9db9;border-radius:4px}
-.t-xp .pn,.t-xp .tn,.t-xp .chc-h,.t-xp .mon,.t-xp .nxt,.t-xp .tpm{font-weight:700}
-.t-xp .tags span{background:#fff;border-color:#7f9db9;border-radius:3px}
-.t-xp .badge{background:#ffffe1;color:#111;border-color:#111;border-radius:3px}
-.t-xp .toc li{border-color:#d4d0c8}
-.t-xp .mem>div,.t-xp .mo>div{background:#fff;border-color:#7f9db9}
-.t-xp .chc-h{background:linear-gradient(#7aa5ee,#4e83de);color:#fff;padding:3px 8px;font-size:13px;border-radius:3px 3px 0 0;margin:0}
-.t-xp .chc{border:1px solid #7f9db9;padding:0 0 10px;margin-bottom:10px;background:#f7f6ef}
-.t-xp .chc>*:not(.chc-h){margin-left:10px;margin-right:10px}
-.t-xp .chc>p:first-of-type{margin-top:8px}
-.t-xp .next{position:relative;background:#ffffe1;border:1px solid #111;border-radius:8px;margin-top:18px}
-.t-xp .next::after{content:"";position:absolute;bottom:-11px;right:40px;border:10px solid transparent;border-top-color:#111;border-bottom:0}
-.t-xp .nxl::before{content:"ⓘ ";color:#0b52d0;font-weight:700}
-.t-xp .foot{margin:28px -26px 0;height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 0;color:#fff;text-align:left;background:linear-gradient(#245edb 0%,#3f8cf3 8%,#245edb 40%,#1941a5 100%)}
-.t-xp .start{height:38px;display:flex;align-items:center;padding:0 22px 0 14px;background:linear-gradient(#3c9a3c,#57c157 12%,#3a9a3a 50%,#2f7f2f);border-radius:0 14px 14px 0;font-style:italic;font-weight:700;font-size:16px;text-shadow:1px 1px 1px #1d4a1d}
-.t-xp .clock{background:linear-gradient(#0f8be6,#16a2f0 50%,#0f7fd8);height:38px;display:flex;align-items:center;padding:0 12px;margin-right:-12px;border-left:1px solid #0b4cbf;font-size:12px}
+/* ───────── 테마 3: 윈도우 2000 ───────── */
+.t-win2k{--bg:#3a6ea5;--paper:#d4d0c8;--ink:#000;--muted:#404040;--line:#808080;--a:#0a246a;--b:#008080;--gap:rgba(0,128,128,.16);
+ --display:'Mona10',monospace;--body:'Mona10',monospace;font-size:20px;line-height:30px;padding:30px 24px 0;
+ -webkit-font-smoothing:none;font-smooth:never;text-rendering:optimizeSpeed;
+ --raise:inset -1px -1px #404040,inset 1px 1px #fff,inset -2px -2px #808080,inset 2px 2px #d4d0c8;
+ --sink:inset 1px 1px #808080,inset -1px -1px #fff,inset 2px 2px #404040,inset -2px -2px #d4d0c8;
+ --win:inset -1px -1px #404040,inset 1px 1px #d4d0c8,inset -2px -2px #808080,inset 2px 2px #fff}
+.t-win2k .sec{background:var(--paper);box-shadow:var(--win),4px 4px 0 rgba(0,0,0,.35);padding:4px;margin-top:24px}
+.t-win2k .sec-h{height:30px;padding:0 3px 0 6px;color:#fff;font-weight:700;background:linear-gradient(90deg,#0a246a,#a6caf0)}
+.t-win2k .xbtn{display:flex;gap:0}
+.t-win2k .xbtn i{width:22px;height:20px;background:var(--paper);box-shadow:var(--raise);color:#000;font-style:normal;font-size:20px;line-height:18px;text-align:center;font-weight:700}
+.t-win2k .xbtn i:last-child{margin-left:3px}
+.t-win2k .sec-b{padding:14px 14px 16px}
+.t-win2k .ct{font-size:40px;line-height:50px;font-weight:700;margin:0 0 6px}
+.t-win2k .cs{font-size:20px;color:var(--muted);margin-bottom:18px}
+.t-win2k .pn,.t-win2k .tn,.t-win2k .tt,.t-win2k .mon,.t-win2k .nxt,.t-win2k .tpm{font-weight:700}
+.t-win2k .pn{font-size:20px}.t-win2k .psub,.t-win2k .meta,.t-win2k .tpd,.t-win2k .src,.t-win2k .legend,.t-win2k .nxl,.t-win2k .q cite,.t-win2k .ba b,.t-win2k .mem b{font-size:20px;line-height:30px}
+.t-win2k .ph{width:80px;height:80px;background:#fff;box-shadow:var(--sink);padding:2px;font-size:30px;color:#808080}
+.t-win2k .tags span{font-size:20px;background:var(--paper);border:0;box-shadow:var(--raise);padding:2px 8px}
+.t-win2k .pq,.t-win2k .q{font-size:20px}
+.t-win2k .toc li{grid-template-columns:40px 1fr;border-bottom:1px solid #808080;box-shadow:0 1px 0 #fff}
+.t-win2k .tn{font-size:30px;line-height:40px;color:var(--a)}
+.t-win2k .tpd{margin-left:8px}
+.t-win2k .badge{font-size:20px;background:#ffffe1;color:#000;border:1px solid #000;padding:0 4px;vertical-align:0;font-weight:400}
+.t-win2k .curve .sec-b>svg{background:#fff;box-shadow:var(--sink);padding:6px}
+.t-win2k .tpm{font-size:20px;line-height:30px;margin:8px 0}
+.t-win2k .ba>div,.t-win2k .mem>div,.t-win2k .mo>div{background:#fff;border:0;box-shadow:var(--sink);padding:10px 12px}
+.t-win2k .chc{background:var(--paper);box-shadow:var(--win);padding:3px 3px 12px;margin-bottom:14px;border:0}
+.t-win2k .chc:last-child{border:0}
+.t-win2k .chc-h{background:linear-gradient(90deg,#808080,#c0c0c0);color:#d4d0c8;font-weight:700;font-size:20px;line-height:28px;padding:0 6px;margin:0 0 8px}
+.t-win2k .chc>*:not(.chc-h){margin-left:10px;margin-right:10px}
+.t-win2k .mon{font-size:20px}
+.t-win2k .next{background:#ffffe1;border:1px solid #000;padding:12px 14px;margin-top:16px}
+.t-win2k .nxl::before{content:"i";display:inline-block;width:20px;height:20px;margin-right:8px;background:#0a246a;color:#fff;text-align:center;line-height:20px;font-weight:700;border-radius:50%}
+.t-win2k .nxt{font-size:30px;line-height:40px}
+.t-win2k .foot{margin:30px -24px 0;height:34px;display:flex;align-items:center;justify-content:space-between;padding:2px 2px 2px 2px;background:var(--paper);box-shadow:inset 0 1px #d4d0c8,inset 0 2px #fff;color:#000;font-size:20px;text-align:left}
+.t-win2k .start{display:flex;align-items:center;gap:6px;height:28px;padding:0 8px 0 4px;box-shadow:var(--raise);font-weight:700}
+.t-win2k .flag{width:18px;height:16px;background:linear-gradient(90deg,#e33b1b 50%,#2fa83a 50%) top/100% 50% no-repeat,linear-gradient(90deg,#1c63d7 50%,#f7c51c 50%) bottom/100% 50% no-repeat;transform:skewX(-6deg)}
+.t-win2k .task{flex:1;margin:0 8px;height:28px;padding:0 8px;line-height:28px;box-shadow:var(--sink);background:#e8e6e1;overflow:hidden;white-space:nowrap;font-weight:700}
+.t-win2k .clock{height:28px;padding:0 10px;line-height:28px;box-shadow:inset 1px 1px #808080,inset -1px -1px #fff}
 
 /* ───────── 테마 4: 미니멀 모던 ───────── */
 .t-minimal{--bg:#f6f6f3;--paper:transparent;--ink:#161616;--muted:#7a7872;--line:#d6d5cf;--a:#161616;--b:#2747c7;--gap:rgba(39,71,199,.10);--display:'IBM Plex Sans KR',sans-serif;--body:'IBM Plex Sans KR',sans-serif;padding:56px 48px}
@@ -319,7 +337,7 @@ title은 12자 이내 챕터 제목, period는 시기를 짧게(예: 첫 만남 
       <div class="seg" id="themes">
         <label><input type="radio" name="theme" value="archive">낡은 기록물</label>
         <label><input type="radio" name="theme" value="film">영화 필름</label>
-        <label><input type="radio" name="theme" value="xp">윈도우 XP</label>
+        <label><input type="radio" name="theme" value="win2k">윈도우 2000</label>
         <label><input type="radio" name="theme" value="minimal">미니멀 모던</label>
       </div>
       <h2>길이</h2>
@@ -375,6 +393,7 @@ function merge(t,s){for(const k in s){if(isObj(s[k])&&isObj(t[k]))merge(t[k],s[k
 
 let state=blank();
 try{const raw=localStorage.getItem(KEY);if(raw)state=merge(blank(),JSON.parse(raw))}catch(e){}
+if(state.theme==='xp')state.theme='win2k';
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
 
 /* ───── 예시 ───── */
@@ -517,10 +536,10 @@ function renderWarns(){
 const LABELS={
  archive:{cover:()=>'사건 기록철',toc:'목차',curve:'거리 기록',turn:'전환점',chs:'본문',mot:'반복된 것들',now:'현재',next:'다음 장',tb:'전환점',db:'기억 불일치'},
  film:{cover:()=>'상영작',toc:'상영 순서',curve:'거리의 궤적',turn:'결정적 장면',chs:'장면들',mot:'소품 목록',now:'지금',next:'다음 회차 예고',tb:'결정적 장면',db:'엇갈린 기억'},
- xp:{cover:t=>`${t||'연대기'}.chr`,toc:'목차.txt',curve:'거리_그래프.bmp',turn:'전환점.log',chs:'챕터 폴더',mot:'모티프',now:'현재 상태',next:'다음 장',tb:'전환점',db:'기억 충돌'},
+ win2k:{cover:t=>`${t||'연대기'} - 관계 연대기`,toc:'목차.txt - 메모장',curve:'거리.bmp - 그림판',turn:'전환점.log - 메모장',chs:'C:\\연대기\\챕터',mot:'모티프 - 탐색기',now:'현재 상태 - 속성',next:'다음 장',tb:'전환점',db:'기억 충돌'},
  minimal:{cover:()=>'관계 연대기',toc:'목차',curve:'거리',turn:'전환점',chs:'챕터',mot:'모티프',now:'현재',next:'다음 장',tb:'전환점',db:'엇갈림'}};
 
-function sec(cls,title,body){return`<section class="sec ${cls}"><div class="sec-h"><span>${esc(title)}</span><span class="xbtn" aria-hidden="true">×</span></div><div class="sec-b">${body}</div></section>`}
+function sec(cls,title,body){return`<section class="sec ${cls}"><div class="sec-h"><span>${esc(title)}</span><span class="xbtn" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div><div class="sec-b">${body}</div></section>`}
 function pcard(p,w){const n=p.name||(w==='a'?'A':'B');
   return`<div class="pf p-${w}"><div class="ph">${p.img?`<img src="${p.img}" alt="">`:esc([...n][0])}</div>
   <div class="pn">${esc(n)}</div>${p.sub?`<div class="psub">${esc(p.sub)}</div>`:''}
@@ -580,7 +599,7 @@ function renderPoster(){
       ${s.next.title?`<div class="next"><div class="nxl">${L.next}</div><div class="nxt">${esc(s.next.title)}</div><p>${esc(s.next.line)}</p></div>`:''}`);
   }
   /* 제작자 표기를 바꾸려면 아래 문구를 수정하세요 */
-  if(s.theme==='xp')h+=`<div class="foot"><span class="start">시작</span><span>${esc(nA)} &amp; ${esc(nB)}</span><span class="clock">관계 연대기</span></div>`;
+  if(s.theme==='win2k')h+=`<div class="foot"><span class="start"><i class="flag"></i>시작</span><span class="task">${esc(nA)} &amp; ${esc(nB)}</span><span class="clock">연대기</span></div>`;
   else if(s.theme==='film')h+=`<div class="foot">출연<b>${esc(nA)}</b><b>${esc(nB)}</b>관계 연대기</div>`;
   else h+=`<div class="foot">${esc(nA)} 그리고 ${esc(nB)}의 관계 연대기</div>`;
   el.innerHTML=h;
