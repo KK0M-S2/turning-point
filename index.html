@@ -118,10 +118,32 @@ details.chap>summary{cursor:pointer;padding:10px 0;font-weight:600}
 /* ───────── 테마 1: 낡은 기록물 ───────── */
 .t-archive{--bg:#c7b48a;--paper:#f0e7d1;--ink:#2a251e;--muted:#6f6350;--line:#cfc2a3;--a:#2a251e;--b:#9b2a23;--gap:rgba(155,42,35,.13);--display:'Chosun Myeongjo','Nanum Myeongjo',serif;--body:'Chosun Myeongjo','Nanum Myeongjo',serif;--mono:'Chosun Myeongjo','Nanum Myeongjo',serif;
  background-image:repeating-linear-gradient(0deg,rgba(60,40,10,.03) 0 1px,transparent 1px 4px),radial-gradient(ellipse at 20% 0%,rgba(255,255,255,.18),transparent 60%)}
-.t-archive .sec{background:var(--paper);padding:20px 24px 22px;box-shadow:0 1px 2px rgba(60,40,10,.25);position:relative}
+.t-archive .sec{padding:20px 24px 22px;position:relative;isolation:isolate;margin-top:32px;
+ --r:-.6deg;--r2:1.4deg;--ux:8px;--uy:10px;--uc:#faf6ea;--ub:none}
+/* 겉 파일철: 종이만 기울이고 내용은 똑바로 */
+.t-archive .sec::before{content:"";position:absolute;inset:0;z-index:-1;background-color:var(--paper);
+ background-image:radial-gradient(circle at 91% 14%,rgba(140,100,40,.12) 0 14px,rgba(140,100,40,.05) 22px,transparent 40px),
+  radial-gradient(ellipse at 6% 92%,rgba(140,100,40,.09) 0 8px,transparent 34px),
+  linear-gradient(170deg,rgba(255,255,255,.25),rgba(120,90,40,.07));
+ transform:rotate(var(--r));box-shadow:0 2px 4px rgba(60,40,10,.3),inset 0 0 22px rgba(120,90,40,.14)}
+/* 아래 깔린 종이 */
+.t-archive .sec::after{content:"";position:absolute;inset:0;z-index:-2;background-color:var(--uc);background-image:var(--ub);
+ transform:translate(var(--ux),var(--uy)) rotate(var(--r2));box-shadow:0 1px 3px rgba(60,40,10,.28)}
+.t-archive .sec:nth-child(7n+1){--r:-.7deg;--r2:1.5deg;--ux:10px;--uy:9px}
+.t-archive .sec:nth-child(7n+2){--r:.55deg;--r2:-1.9deg;--ux:-10px;--uy:12px;--uc:#fbf9f2;--ub:repeating-linear-gradient(transparent 0 21px,rgba(70,100,150,.22) 21px 22px)}
+.t-archive .sec:nth-child(7n+3){--r:-.35deg;--r2:-1deg;--ux:7px;--uy:-11px;--uc:#d6c59c}
+.t-archive .sec:nth-child(7n+4){--r:.8deg;--r2:2.3deg;--ux:-7px;--uy:15px;--uc:#e6ecef}
+.t-archive .sec:nth-child(7n+5){--r:-.45deg;--r2:-1.3deg;--ux:12px;--uy:-7px;--uc:#fbf9f2;--ub:repeating-linear-gradient(transparent 0 21px,rgba(70,100,150,.22) 21px 22px)}
+.t-archive .sec:nth-child(7n+6){--r:.4deg;--r2:1.8deg;--ux:-11px;--uy:-9px;--uc:#d9c9a5}
+.t-archive .sec:nth-child(7n+7){--r:-.9deg;--r2:.6deg;--ux:5px;--uy:16px;--uc:#f3ead2}
+/* 테이프 */
+.t-archive .curve>.sec-b::before,.t-archive .now>.sec-b::before,.t-archive .mot>.sec-b::before{content:"";position:absolute;top:-11px;left:50%;width:96px;height:24px;margin-left:-48px;z-index:1;
+ background:rgba(238,228,196,.62);box-shadow:0 1px 1px rgba(60,40,10,.12);transform:rotate(-4deg)}
+.t-archive .now>.sec-b::before{left:auto;right:30px;transform:rotate(6deg)}
+.t-archive .mot>.sec-b::before{left:70px;transform:rotate(-8deg)}
 .t-archive .sec-h{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;border-bottom:1px dashed var(--muted);padding-bottom:6px;margin-bottom:12px}
-.t-archive .cover{margin-top:14px}
-.t-archive .cover::before{content:"";position:absolute;top:-14px;left:24px;width:130px;height:14px;background:var(--paper);border-radius:6px 6px 0 0}
+.t-archive .cover{margin-top:20px}
+.t-archive .cover>.sec-h::before{content:"";position:absolute;top:-15px;left:24px;width:132px;height:22px;z-index:-1;background:var(--paper);border-radius:6px 6px 0 0;transform:rotate(var(--r));box-shadow:0 -1px 2px rgba(60,40,10,.15)}
 .t-archive .ph{filter:sepia(.45) contrast(1.05);border:6px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transform:rotate(-2deg)}
 .t-archive .p-b .ph{transform:rotate(2deg)}
 .t-archive .badge{font-family:var(--mono);border:2px solid var(--b);border-radius:3px;padding:0 6px;transform:rotate(-5deg);opacity:.85}
